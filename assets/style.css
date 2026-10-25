@@ -47,8 +47,6 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
 .hero h1 { font-size: clamp(46px, 9vw, 112px); line-height: .95; font-weight: 800; letter-spacing: -.045em; text-transform: uppercase; }
 .hero h1 .first { display: block; font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; letter-spacing: 0;
   color: var(--accent-3); font-size: .62em; }
-.motto { margin: 18px 0 0; font: 800 clamp(15px, 1.8vw, 20px) var(--display); letter-spacing: .4em; color: var(--gold); }
-.motto i { font-style: normal; font-size: .6em; vertical-align: middle; opacity: .8; }
 .lead { max-width: 640px; font-size: clamp(17px, 2vw, 20px); color: #d9e2ff; margin: 22px 0 28px; }
 .lead em { color: #fff; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
