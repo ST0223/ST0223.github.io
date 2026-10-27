@@ -85,6 +85,10 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
 .v2 { background: linear-gradient(135deg, #0e3b31, #18785b); }
 .v3 { background: linear-gradient(135deg, #3a1d6e, #8b6cff); }
 .v4 { background: linear-gradient(135deg, #0b1d4a, #1f8fbf); }
+.v5 { background: linear-gradient(135deg, #5a2a0c, #c9822b); }
+.v6 { background: linear-gradient(135deg, #12304f, #2c6fbb); }
+.v7 { background: linear-gradient(135deg, #0d3a3a, #239090); }
+.v8 { background: linear-gradient(135deg, #3b1236, #a8448f); }
 .project-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .tagline { margin: 0; font: 600 12px var(--display); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
 .project h3 { font-size: 20px; }
