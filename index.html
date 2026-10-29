@@ -1,7 +1,12 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Thème clair par défaut ; le choix fait avec le bouton ☾ / ☀ est mémorisé
+    document.documentElement.classList.add("js");
+    try { document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "light"; } catch (e) {}
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sounkalo TRAORÉ · Statisticien-Économiste, suivi-évaluation et données</title>
   <meta name="description" content="Portfolio de Sounkalo TRAORÉ, Ingénieur Statisticien-Économiste basé à Dakar : suivi-évaluation (MEAL), enquêtes, analyse de données et tableaux de bord.">
@@ -11,348 +16,360 @@
   <meta property="og:url" content="https://st0223.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='7' width='18' height='18' rx='4' transform='rotate(45 16 16)' fill='%236d4aff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='7' width='18' height='18' rx='4' transform='rotate(45 16 16)' fill='%23e2552f'/%3E%3C/svg%3E">
 </head>
 <body>
 
-<header class="nav">
+<header class="topbar">
   <a class="brand" href="#accueil"><span class="mark" aria-hidden="true"></span>Sounkalo TRAORÉ</a>
-  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
   <nav id="menu">
-    <a href="#apropos">À propos</a>
-    <a href="#projets">Projets</a>
-    <a href="#parcours">Parcours</a>
     <a href="#competences">Compétences</a>
+    <a href="#experiences">Expériences</a>
+    <a href="#formation">Formation</a>
     <a href="#certifications">Certifications</a>
-    <a class="nav-cta" href="#contact">Contact</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
   </nav>
+  <div class="topbar-tools">
+    <button type="button" class="theme-toggle" aria-label="Changer de thème (clair ou sombre)"></button>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
 </header>
 
 <main>
 
-<!-- ============ ACCUEIL ============ -->
-<section class="hero" id="accueil">
-  <div class="hero-inner">
-    <p class="eyebrow light">Ingénieur Statisticien-Économiste · Dakar, Sénégal</p>
-    <h1><span class="first">Sounkalo</span> TRAORÉ</h1>
-    <p class="lead">Des données fiables pour des décisions éclairées : <em>suivi-évaluation</em>, enquêtes, analyse statistique et tableaux de bord.</p>
-    <div class="hero-actions">
-      <a class="btn" href="#projets">Voir mes projets</a>
-      <a class="btn ghost" href="cv/CV-Sounkalo-TRAORE.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+<section class="pf-hero" id="accueil">
+  <canvas class="silk" aria-hidden="true"></canvas>
+  <div class="pf-hero-inner">
+    <div class="fade" style="--d: .1s" aria-hidden="true"><div class="monogram"><span>ST</span></div></div>
+    <div class="pf-id">
+      <p class="eyebrow light fade" style="--d: .2s">Portfolio · Statistique, suivi-évaluation et données</p>
+      <h1 class="fade" style="--d: .3s">Sounkalo TRAORÉ</h1>
+      <p class="pf-title fade" style="--d: .4s">Ingénieur Statisticien-Économiste <em>— Dakar, Sénégal</em></p>
+      <div class="pf-contacts fade" style="--d: .5s">
+        <a href="mailto:sounkalotraore.ing@gmail.com">✉ sounkalotraore.ing@gmail.com</a>
+        <a href="tel:+221785888646">☏ +221 78 588 86 46</a>
+        <a href="https://www.linkedin.com/in/ing-sounkalo-traore" target="_blank" rel="noopener">in · LinkedIn</a>
+      </div>
     </div>
-    <ul class="axes">
-      <li><b>Collecte</b>KoboToolbox, ODK, CSPro, QuestionPro : des enquêtes pensées pour le terrain.</li>
-      <li><b>Analyse</b>R, Python, Stata et SQL, de l'apurement à l'économétrie.</li>
-      <li><b>Restitution</b>Power BI, tableaux de bord, rapports et notes méthodologiques.</li>
-      <li><b>Suivi-évaluation</b>Indicateurs, cadres logiques, MEAL, redevabilité et apprentissage.</li>
-    </ul>
+    <a class="btn light pf-cv fade" style="--d: .6s" href="cv/CV-Sounkalo-TRAORE.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+  </div>
+  <div class="pf-domains">
+    <span class="fade" style="--d: 0.6s"><i>01</i>Suivi-évaluation / MEAL</span><span class="fade" style="--d: 0.7s"><i>02</i>Statisticien</span><span class="fade" style="--d: 0.8s"><i>03</i>Data Analyst</span><span class="fade" style="--d: 0.9s"><i>04</i>Data Engineer (à terme)</span>
   </div>
 </section>
 
-<!-- ============ À PROPOS ============ -->
-<section class="block" id="apropos">
-  <div class="head"><span class="index">01</span><h2>À propos</h2></div>
-  <div class="about">
-    <p class="about-lead">Ingénieur Statisticien-Économiste formé à l'Université Cheikh Anta Diop de Dakar, je conçois des enquêtes, je traite et j'analyse des données, et je les transforme en indicateurs utiles au pilotage des projets.</p>
-    <div class="about-text">
-    <p>Aujourd'hui Statisticien – Data Analyst chez <b>DataTym</b>, je pilote des baromètres périodiques, de la conception des questionnaires à la rédaction des rapports. Mon parcours, de Bamako à Dakar, m'a mené de la statistique publique (AFRISTAT) à la recherche appliquée (CREA, UCAD) et au conseil (DOLPH-STATS Consulting, Laboratoire BIO24).</p>
-    <p>Certifié en suivi-évaluation et MEAL (AFD, DisasterReady, Save the Children) et en science des données (ALX), je travaille aussi bien pour des organisations de développement que pour des entreprises.</p>
-    </div>
-    <ul class="facts">
-      <li><b>5</b><span>expériences professionnelles</span></li>
-      <li><b>16</b><span>certifications</span></li>
-      <li><b>Master</b><span>ISEF, UCAD</span></li>
-    </ul>
+<section class="pf-quote reveal">
+  <span class="q" aria-hidden="true">“</span>
+  <p>Ingénieur Statisticien-Économiste formé à l&#x27;UCAD (Dakar). Expérience en conception d&#x27;enquêtes, échantillonnage, apurement et analyse de données, suivi-évaluation et reporting. Maîtrise de R, Python, Stata, SQL et Power BI, dans le contexte ouest-africain.</p>
+</section>
+
+<section class="pf-block" id="competences">
+  <div class="pf-head reveal"><span class="pf-index">01</span><h2>Compétences</h2></div>
+  <div class="bento">
+      <article class="bento-card reveal wide" style="--i: 0">
+        <span class="bento-num">01</span>
+        <h3>Suivi-évaluation (MEAL)</h3>
+        <div class="bento-chips"><span>cadres logiques</span><span>théorie du changement</span><span>plans de suivi</span><span>indicateurs SMART</span><span>gestion axée sur les résultats</span><span>redevabilité (feedbacks, plaintes)</span><span>capitalisation des apprentissages</span></div>
+      </article>
+      <article class="bento-card reveal" style="--i: 1">
+        <span class="bento-num">02</span>
+        <h3>Enquêtes &amp; échantillonnage</h3>
+        <div class="bento-chips"><span>conception de questionnaires</span><span>plans d&#x27;échantillonnage</span><span>suivi de collecte</span><span>contrôle qualité des enquêteurs</span><span>redressement</span><span>gestion des valeurs manquantes</span></div>
+      </article>
+      <article class="bento-card reveal" style="--i: 2">
+        <span class="bento-num">03</span>
+        <h3>Traitement &amp; analyse statistique</h3>
+        <div class="bento-chips"><span>apurement et structuration de bases</span><span>tris à plat et croisements</span><span>méthodes statistiques et économétriques</span><span>modélisation prévisionnelle</span></div>
+      </article>
+      <article class="bento-card reveal tools" style="--i: 3">
+        <span class="bento-num">04</span>
+        <h3>Langages &amp; outils</h3>
+        <div class="bento-chips"><span>R</span><span>Python</span><span>Stata</span><span>SPSS</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>Excel avancé</span></div>
+      </article>
+      <article class="bento-card reveal" style="--i: 4">
+        <span class="bento-num">05</span>
+        <h3>Collecte numérique</h3>
+        <div class="bento-chips"><span>KoboToolbox</span><span>ODK</span><span>CSPro</span><span>Google Forms</span><span>QuestionPro</span></div>
+      </article>
+      <article class="bento-card reveal" style="--i: 5">
+        <span class="bento-num">06</span>
+        <h3>Restitution &amp; reporting</h3>
+        <div class="bento-chips"><span>Power BI</span><span>tableaux de bord</span><span>rapports</span><span>notes méthodologiques</span></div>
+      </article>
+      <article class="bento-card reveal" style="--i: 6">
+        <span class="bento-num">07</span>
+        <h3>Coordination</h3>
+        <div class="bento-chips"><span>équipes projet</span><span>partenaires locaux</span><span>structures communautaires</span></div>
+      </article>
   </div>
 </section>
 
-<!-- ============ PROJETS ============ -->
-<section class="block" id="projets">
-  <div class="head"><span class="index">02</span><h2>Projets</h2></div>
-  <p class="intro">Une sélection de travaux menés en poste. Les données des clients restent confidentielles : chaque projet présente la démarche, les outils et ce qui a été produit.</p>
-  <div class="projects">
-    <article class="project">
-      <div class="visual v1" aria-hidden="true"><span>Baromètres</span></div>
-      <div class="project-body">
-        <p class="tagline">DataTym · depuis août 2026</p>
-        <h3>Baromètres périodiques de suivi</h3>
-        <p>Conception et pilotage de baromètres dans divers domaines, du questionnaire au rapport de restitution.</p>
-        <ul>
-          <li>Questionnaires et système de gestion des baromètres sous QuestionPro</li>
-          <li>Formation des agents collecteurs aux outils et aux procédures</li>
-          <li>Traitement et analyse des données pour le suivi des indicateurs</li>
-          <li>Automatisation des tâches de traitement et de production</li>
-          <li>Rapports à chaque étape, de la conception à la restitution</li>
-        </ul>
-        <p class="tools"><span>QuestionPro</span><span>Excel avancé</span><span>Automatisation</span><span>Rapports</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v2" aria-hidden="true"><span>Contrôle qualité</span></div>
-      <div class="project-body">
-        <p class="tagline">DataTym · 2026</p>
-        <h3>Plateforme de contrôle qualité de la collecte</h3>
-        <p>Un outil pour suivre la collecte et garantir la fiabilité des données remontées du terrain.</p>
-        <ul>
-          <li>Suivi-évaluation de l'avancement de la collecte</li>
-          <li>Contrôle qualité du travail des enquêteurs</li>
-          <li>Repérage des incohérences et retours aux équipes terrain</li>
-        </ul>
-        <p class="tools"><span>QuestionPro</span><span>Contrôle qualité</span><span>Suivi-évaluation</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v3" aria-hidden="true"><span>Tableaux de bord</span></div>
-      <div class="project-body">
-        <p class="tagline">Laboratoire BIO24 · DOLPH-STATS Consulting</p>
-        <h3>Tableaux de bord de suivi des indicateurs</h3>
-        <p>Des tableaux de bord pour suivre la performance et appuyer la décision des équipes, dans une logique de gestion axée sur les résultats.</p>
-        <ul>
-          <li>Mise en place et suivi d'indicateurs de performance</li>
-          <li>Tableaux de bord décisionnels et baromètres sous Power BI et Excel avancé</li>
-          <li>Identification des écarts entre résultats et objectifs</li>
-        </ul>
-        <p class="tools"><span>Power BI</span><span>Excel avancé</span><span>Indicateurs</span><span>GAR</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v4" aria-hidden="true"><span>Données de santé</span></div>
-      <div class="project-body">
-        <p class="tagline">Laboratoire BIO24 · 2025</p>
-        <h3>Gestion et analyse des données sanitaires</h3>
-        <p>Des données sanitaires, financières et opérationnelles fiabilisées et analysées, dans le respect de la confidentialité.</p>
-        <ul>
-          <li>Outils de collecte (questionnaires, formulaires digitaux) pour des enquêtes internes et externes</li>
-          <li>Supervision de la collecte avec les équipes terrain</li>
-          <li>Contrôles internes de cohérence des bases de données</li>
-          <li>Contrôle de gestion : suivi financier et logistique</li>
-          <li>Rapports d'activités périodiques et notes de synthèse</li>
-        </ul>
-        <p class="tools"><span>Formulaires digitaux</span><span>Contrôle qualité</span><span>Éthique des données</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v5" aria-hidden="true"><span>Études de marché</span></div>
-      <div class="project-body">
-        <p class="tagline">DOLPH-STATS Consulting · 2024–2025</p>
-        <h3>Études de marché et analyses pour des clients</h3>
-        <p>Des études pour éclairer les choix stratégiques : tendances, risques et recommandations.</p>
-        <ul>
-          <li>Conception des outils de collecte et coordination de la collecte</li>
-          <li>Analyses descriptives, multidimensionnelles et inférentielles</li>
-          <li>Consolidation de données financières et opérationnelles, repérage des risques</li>
-          <li>Rapports d'études et présentation des résultats aux parties prenantes</li>
-        </ul>
-        <p class="tools"><span>SPSS</span><span>Stata</span><span>Excel avancé</span><span>Rapports</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v6" aria-hidden="true"><span>Bases de données</span></div>
-      <div class="project-body">
-        <p class="tagline">DOLPH-STATS Consulting · 2024–2025</p>
-        <h3>Centralisation et modélisation de bases de données</h3>
-        <p>Des données dispersées rassemblées dans des bases structurées, prêtes pour l'analyse et les tableaux de bord.</p>
-        <ul>
-          <li>Structuration et centralisation de bases sous PostgreSQL et MySQL</li>
-          <li>Collecte automatisée de données par web scraping</li>
-          <li>Modélisation des données pour des projets clients</li>
-        </ul>
-        <p class="tools"><span>PostgreSQL</span><span>MySQL</span><span>SQL</span><span>Web scraping</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v7" aria-hidden="true"><span>Recherche & impact</span></div>
-      <div class="project-body">
-        <p class="tagline">CREA, UCAD · depuis 2024</p>
-        <h3>Recherche appliquée et évaluation de projets à impact social</h3>
-        <p>Des analyses quantitatives au service de l'évaluation de projets et des politiques publiques.</p>
-        <ul>
-          <li>Collecte, traitement et analyse de données socio-économiques</li>
-          <li>Évaluation de projets à impact social et analyse de politiques publiques</li>
-          <li>Traitement de données environnementales et sociales (ESG)</li>
-          <li>Modélisation économétrique et prévisionnelle</li>
-          <li>Rapports, notes de synthèse et articles scientifiques</li>
-        </ul>
-        <p class="tools"><span>Stata</span><span>R</span><span>Économétrie</span><span>ESG</span></p>
-      </div>
-    </article>
-    <article class="project">
-      <div class="visual v8" aria-hidden="true"><span>Data Science</span></div>
-      <div class="project-body">
-        <p class="tagline">ALX Africa · 2026</p>
-        <h3>Programme Data Science</h3>
-        <p>Programme complet de science des données, validé par l'ensemble des projets et évaluations du cursus, après le programme Data Analytics (6 mois).</p>
-        <ul>
-          <li>Préparation, analyse et visualisation de données avec Python</li>
-          <li>Méthodes d'apprentissage automatique appliquées</li>
-        </ul>
-        <p class="tools"><span>Python</span><span>Data Science</span><span>Visualisation</span></p>
-        <a class="link" href="https://ehub.alxafrica.com/ob3/verify-certificate/a1025298-87ca-4390-833e-f0984b728046" target="_blank" rel="noopener">Vérifier le certificat ↗</a>
-      </div>
-    </article>
-  </div>
+<section class="pf-block" id="experiences">
+  <div class="pf-head reveal"><span class="pf-index">02</span><h2>Expériences</h2></div>
+  <ol class="xp">
+      <li class="xp-item reveal" style="--i: 0">
+        <div class="xp-years" title="Depuis août 2026"><b>2026</b><span>aujourd'hui</span></div>
+        <div class="xp-logo" aria-hidden="true">DA</div>
+        <div class="xp-body">
+          <h3>Statisticien – Data Analyst</h3>
+          <p class="xp-org">DataTym · Dakar <span class="live">en cours</span></p>
+          <ul>
+          <li>Élaborer une plateforme de contrôle qualité et de suivi-évaluation de la collecte</li>
+          <li>Concevoir les questionnaires et le système de gestion des baromètres sous QuestionPro</li>
+          <li>Concevoir et piloter des baromètres périodiques dans divers domaines</li>
+          <li>Former les agents collecteurs aux outils et procédures de collecte</li>
+          <li>Traiter et analyser les données des études barométriques pour le suivi des indicateurs</li>
+          <li>Rédiger les rapports de chaque étape de l&#x27;enquête, de la conception à la restitution</li>
+          <li>Automatiser des tâches de traitement et de production des baromètres</li>
+          </ul>
+        </div>
+      </li>
+      <li class="xp-item reveal" style="--i: 1">
+        <div class="xp-years" title="Depuis avril 2024"><b>2024</b><span>aujourd'hui</span></div>
+        <div class="xp-logo" aria-hidden="true">CU</div>
+        <div class="xp-body">
+          <h3>Assistant de recherche</h3>
+          <p class="xp-org">CREA, UCAD · Dakar <span class="live">en cours</span></p>
+          <ul>
+          <li>Conduire des recherches appliquées sur des problématiques économiques et sociales</li>
+          <li>Collecter, traiter, analyser et interpréter des données quantitatives socio-économiques</li>
+          <li>Appuyer la conception des méthodologies de recherche et la modélisation économétrique</li>
+          <li>Rédiger des rapports de recherche, des notes de synthèse et des articles scientifiques</li>
+          <li>Contribuer à l&#x27;évaluation de projets à impact social et à l&#x27;analyse des politiques publiques</li>
+          <li>Traiter et analyser des données environnementales et sociales (ESG)</li>
+          <li>Encadrer des étudiants de Master dans leurs travaux de mémoire</li>
+          <li>Présenter les résultats de recherche aux équipes et aux partenaires</li>
+          </ul>
+        </div>
+      </li>
+      <li class="xp-item reveal" style="--i: 2">
+        <div class="xp-years" title="De septembre 2025 à décembre 2025"><b>2025</b><span>2025</span></div>
+        <div class="xp-logo" aria-hidden="true">LB</div>
+        <div class="xp-body">
+          <h3>Statisticien</h3>
+          <p class="xp-org">Laboratoire BIO24 · Dakar</p>
+          <ul>
+          <li>Concevoir des outils de collecte (questionnaires, formulaires digitaux) pour des enquêtes internes et externes</li>
+          <li>Suivre la collecte et appuyer les équipes terrain dans la supervision</li>
+          <li>Nettoyer, contrôler la qualité et analyser des données quantitatives et qualitatives (sanitaires, financières, opérationnelles)</li>
+          <li>Fiabiliser les bases de données par des contrôles internes de cohérence</li>
+          <li>Suivre les indicateurs de performance et identifier les écarts, dans une logique de gestion axée sur les résultats</li>
+          <li>Produire des tableaux de bord de suivi des indicateurs sous Power BI</li>
+          <li>Réaliser des analyses économétriques et de la modélisation prévisionnelle</li>
+          <li>Assurer le contrôle de gestion : suivi financier et logistique</li>
+          <li>Rédiger des rapports d&#x27;activités périodiques et des notes de synthèse pour l&#x27;aide à la décision</li>
+          <li>Respecter les normes de confidentialité et d&#x27;éthique dans la gestion des données de santé</li>
+          </ul>
+        </div>
+      </li>
+      <li class="xp-item reveal" style="--i: 3">
+        <div class="xp-years" title="De octobre 2024 à août 2025"><b>2024</b><span>2025</span></div>
+        <div class="xp-logo" aria-hidden="true">DS</div>
+        <div class="xp-body">
+          <h3>Assistant Data Analyst</h3>
+          <p class="xp-org">DOLPH-STATS Consulting · Dakar</p>
+          <ul>
+          <li>Concevoir des outils de collecte alignés sur les indicateurs de suivi-évaluation</li>
+          <li>Appuyer la planification et la coordination des activités de collecte</li>
+          <li>Nettoyer, contrôler la cohérence et valider les données collectées</li>
+          <li>Réaliser des analyses descriptives, multidimensionnelles et inférentielles (SPSS, Stata)</li>
+          <li>Mettre en place et suivre des indicateurs de performance pour l&#x27;évaluation de projets à impact social</li>
+          <li>Concevoir des tableaux de bord décisionnels sous Power BI et Excel avancé</li>
+          <li>Créer des baromètres et des tableaux de bord de suivi d&#x27;indicateurs</li>
+          <li>Réaliser des études de marché : analyse des tendances et recommandations stratégiques</li>
+          <li>Structurer et centraliser des bases de données (PostgreSQL, MySQL), avec web scraping et modélisation des données</li>
+          <li>Consolider des données financières et opérationnelles, repérer risques et incohérences et proposer des recommandations</li>
+          <li>Rédiger des rapports d&#x27;études et des notes d&#x27;analyse, et présenter les résultats aux parties prenantes</li>
+          <li>Renforcer les capacités des équipes sur les outils de collecte et d&#x27;analyse</li>
+          </ul>
+        </div>
+      </li>
+      <li class="xp-item reveal" style="--i: 4">
+        <div class="xp-years" title="De novembre 2020 à décembre 2020"><b>2020</b><span>2020</span></div>
+        <div class="xp-logo" aria-hidden="true">AF</div>
+        <div class="xp-body">
+          <h3>Statisticien | Data Analyst</h3>
+          <p class="xp-org">AFRISTAT · Bamako</p>
+          <ul>
+          <li>Concevoir des enquêtes, dont une enquête de satisfaction, et leurs outils de collecte</li>
+          <li>Collecter des données sur le terrain</li>
+          <li>Traiter et mettre à jour des données conjoncturelles et des bases de données</li>
+          <li>Produire des rapports et analyses statistiques et contribuer à l&#x27;élaboration d&#x27;indicateurs économiques</li>
+          </ul>
+        </div>
+      </li>
+  </ol>
 </section>
 
-<!-- ============ PARCOURS ============ -->
-<section class="block" id="parcours">
-  <div class="head"><span class="index">03</span><h2>Parcours</h2></div>
-  <div class="timeline">
-    <article class="step">
-      <p class="when">Août 2026 – aujourd'hui · <span class="live">en cours</span></p>
-      <h3>Statisticien – Data Analyst</h3>
-      <p class="org">DataTym · Dakar</p>
-      <ul>
-        <li>Élaborer une plateforme de contrôle qualité et de suivi-évaluation de la collecte</li>
-        <li>Concevoir les questionnaires et le système de gestion des baromètres sous QuestionPro</li>
-        <li>Concevoir et piloter des baromètres périodiques dans divers domaines</li>
-        <li>Former les agents collecteurs aux outils et procédures de collecte</li>
-        <li>Traiter et analyser les données des études barométriques pour le suivi des indicateurs</li>
-        <li>Rédiger les rapports de chaque étape de l'enquête, de la conception à la restitution</li>
-        <li>Automatiser des tâches de traitement et de production des baromètres</li>
-      </ul>
-    </article>
-    <article class="step">
-      <p class="when">Avril 2024 – aujourd'hui · <span class="live">en cours</span></p>
-      <h3>Assistant de recherche</h3>
-      <p class="org">Centre de Recherches Économiques Appliquées (CREA), UCAD · Dakar</p>
-      <ul>
-        <li>Conduire des recherches appliquées sur des problématiques économiques et sociales</li>
-        <li>Collecter, traiter, analyser et interpréter des données quantitatives socio-économiques</li>
-        <li>Appuyer la conception des méthodologies de recherche et la modélisation économétrique</li>
-        <li>Contribuer à l'évaluation de projets à impact social et à l'analyse des politiques publiques</li>
-        <li>Traiter et analyser des données environnementales et sociales (ESG)</li>
-        <li>Rédiger des rapports de recherche, des notes de synthèse et des articles scientifiques</li>
-        <li>Présenter les résultats de recherche aux équipes et aux partenaires</li>
-        <li>Encadrer des étudiants de Master dans leurs travaux de mémoire</li>
-      </ul>
-    </article>
-    <article class="step">
-      <p class="when">Septembre – décembre 2025</p>
-      <h3>Statisticien</h3>
-      <p class="org">Laboratoire BIO24 · Dakar</p>
-      <ul>
-        <li>Concevoir des outils de collecte (questionnaires, formulaires digitaux) pour des enquêtes internes et externes</li>
-        <li>Suivre la collecte et appuyer les équipes terrain dans la supervision</li>
-        <li>Nettoyer, contrôler la qualité et analyser des données quantitatives et qualitatives (sanitaires, financières, opérationnelles)</li>
-        <li>Fiabiliser les bases de données par des contrôles internes de cohérence</li>
-        <li>Suivre les indicateurs de performance et identifier les écarts, dans une logique de gestion axée sur les résultats</li>
-        <li>Produire des tableaux de bord de suivi des indicateurs sous Power BI</li>
-        <li>Réaliser des analyses économétriques et de la modélisation prévisionnelle</li>
-        <li>Assurer le contrôle de gestion : suivi financier et logistique</li>
-        <li>Rédiger des rapports d'activités périodiques et des notes de synthèse pour l'aide à la décision</li>
-        <li>Respecter les normes de confidentialité et d'éthique dans la gestion des données de santé</li>
-      </ul>
-    </article>
-    <article class="step">
-      <p class="when">Octobre 2024 – août 2025</p>
-      <h3>Assistant Data Analyst</h3>
-      <p class="org">DOLPH-STATS Consulting · Dakar</p>
-      <ul>
-        <li>Concevoir des outils de collecte alignés sur les indicateurs de suivi-évaluation</li>
-        <li>Appuyer la planification et la coordination des activités de collecte</li>
-        <li>Nettoyer, contrôler la cohérence et valider les données collectées</li>
-        <li>Réaliser des analyses descriptives, multidimensionnelles et inférentielles (SPSS, Stata)</li>
-        <li>Mettre en place et suivre des indicateurs de performance pour l'évaluation de projets à impact social</li>
-        <li>Concevoir des tableaux de bord décisionnels et des baromètres sous Power BI et Excel avancé</li>
-        <li>Réaliser des études de marché : analyse des tendances et recommandations stratégiques</li>
-        <li>Structurer et centraliser des bases de données (PostgreSQL, MySQL), avec web scraping et modélisation des données</li>
-        <li>Consolider des données financières et opérationnelles, repérer risques et incohérences et proposer des recommandations</li>
-        <li>Rédiger des rapports d'études et des notes d'analyse, et présenter les résultats aux parties prenantes</li>
-        <li>Renforcer les capacités des équipes sur les outils de collecte et d'analyse</li>
-      </ul>
-    </article>
-    <article class="step">
-      <p class="when">Novembre – décembre 2020</p>
-      <h3>Statisticien | Data Analyst</h3>
-      <p class="org">AFRISTAT · Bamako</p>
-      <ul>
-        <li>Concevoir des enquêtes, dont une enquête de satisfaction, et leurs outils de collecte</li>
-        <li>Collecter des données sur le terrain</li>
-        <li>Traiter et mettre à jour des données conjoncturelles et des bases de données</li>
-        <li>Produire des rapports et analyses statistiques et contribuer à l'élaboration d'indicateurs économiques</li>
-      </ul>
-    </article>
-  </div>
-
-  <h3 class="sub">Formation</h3>
+<section class="pf-block" id="formation">
+  <div class="pf-head reveal"><span class="pf-index">03</span><h2>Formation</h2></div>
   <div class="edu">
-    <div><b>Master en Ingénierie Statistique, Économique et Financière (ISEF)</b><span>FASEG, Université Cheikh Anta Diop de Dakar · 2022–2023</span></div>
-    <div><b>Licence en Analyses Statistique, Économique et Financière (ASEF)</b><span>FASEG, Université Cheikh Anta Diop de Dakar · 2020–2021</span></div>
-    <div><b>DUT en Statistique et Traitement Informatique des Données (STID)</b><span>CFP-Stat, Bamako · 2018–2020</span></div>
+      <article class="edu-card reveal" style="--i: 0">
+        <span class="edu-years">2022–2023</span>
+        <h3>Master en Ingénierie Statistique, Économique et Financière (ISEF)</h3>
+        <p>FASEG, Université Cheikh Anta Diop de Dakar (UCAD)</p>
+        <span class="edu-shape" aria-hidden="true"></span>
+      </article>
+      <article class="edu-card reveal" style="--i: 1">
+        <span class="edu-years">2020–2021</span>
+        <h3>Licence en Analyses Statistique, Économique et Financière (ASEF)</h3>
+        <p>FASEG, Université Cheikh Anta Diop de Dakar (UCAD)</p>
+        <span class="edu-shape" aria-hidden="true"></span>
+      </article>
+      <article class="edu-card reveal" style="--i: 2">
+        <span class="edu-years">2018–2020</span>
+        <h3>DUT en Statistique et Traitement Informatique des Données (STID)</h3>
+        <p>CFP-Stat, Bamako</p>
+        <span class="edu-shape" aria-hidden="true"></span>
+      </article>
+  </div>
+  <p class="pf-note reveal">Diplômes, relevés de notes et attestations de travail disponibles sur demande : <a href="mailto:sounkalotraore.ing@gmail.com">sounkalotraore.ing@gmail.com</a></p>
+</section>
+
+<section class="pf-block two" id="certifications">
+  <div>
+    <div class="pf-head reveal"><span class="pf-index">04</span><h2>Certifications</h2></div>
+    <div class="certs">
+        <article class="cert-col reveal" style="--i: 0">
+          <header><b>5</b><span>Suivi-évaluation</span></header>
+          <ul><li><span>Suivi &amp; Évaluation de projet</span><small>AFD · 2024 · <a href="certificats/AFD-Suivi-evaluation-de-projet.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>MEAL Essentials</span><small>DisasterReady · 2024 · <a href="certificats/DisasterReady-MEAL-Essentials.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>MEAL en situations d&#x27;urgence</span><small>Save the Children · 2024 · <a href="certificats/Save-the-Children-MEAL-urgence.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Child Protection — gestion axée sur les résultats</span><small>UNICEF · 2024 · <a href="certificats/UNICEF-Child-Protection-RBM.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Gestion responsable des données en situations d&#x27;urgence</span><small>Save the Children · 2024 · <a href="certificats/Save-the-Children-Gestion-responsable-donnees.pdf" target="_blank" rel="noopener">voir ↗</a></small></li></ul>
+        </article>
+        <article class="cert-col reveal" style="--i: 1">
+          <header><b>5</b><span>Data &amp; analyse</span></header>
+          <ul><li><span>Data Science</span><small>ALX · 2026 · <a href="certificats/ALX-Data-Science.pdf" target="_blank" rel="noopener">voir ↗</a> · <a href="https://ehub.alxafrica.com/ob3/verify-certificate/a1025298-87ca-4390-833e-f0984b728046" target="_blank" rel="noopener">vérifier ↗</a></small></li><li><span>Data Analytics (6 mois)</span><small>ALX · 2026 · <a href="certificats/ALX-Data-Analytics.pdf" target="_blank" rel="noopener">voir ↗</a> · <a href="https://savanna.alxafrica.com/certificates/7m3JCNe69Y" target="_blank" rel="noopener">vérifier ↗</a></small></li><li><span>Professional Development Skills for the Digital Age</span><small>ALX · 2025 · <a href="certificats/ALX-Professional-Development-Skills.pdf" target="_blank" rel="noopener">voir ↗</a> · <a href="https://savanna.alxafrica.com/certificates/SBZhN265cr" target="_blank" rel="noopener">vérifier ↗</a></small></li><li><span>Analyse de données qualitatives</span><small>Cornerstone · 2024 · <a href="certificats/Cornerstone-Analyse-donnees-qualitatives.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Traitement des données N2</span><small>FORCE-N / Francophonie · 2024 · <a href="certificats/FORCE-N-Traitement-des-donnees-N2.pdf" target="_blank" rel="noopener">voir ↗</a></small></li></ul>
+        </article>
+        <article class="cert-col reveal" style="--i: 2">
+          <header><b>6</b><span>Autres</span></header>
+          <ul><li><span>IA pour tous</span><small>FORCE-N / Francophonie · 2025 · <a href="certificats/FORCE-N-IA-pour-tous.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Marketing numérique</span><small>Francophonie · 2025 · <a href="certificats/Francophonie-Marketing-numerique.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Commerce digital</span><small>FORCE-N · 2025 · <a href="certificats/FORCE-N-Commerce-digital.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Informatique et Internet</span><small>FORCE-N / Francophonie · 2024 · <a href="certificats/FORCE-N-Informatique-et-Internet.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Finances et budgets en situations d&#x27;urgence</span><small>Save the Children · 2024 · <a href="certificats/Save-the-Children-Finances-budgets-urgence.pdf" target="_blank" rel="noopener">voir ↗</a></small></li><li><span>Gérer les conflits sur le lieu de travail</span><small>Nations Unies · 2024 · <a href="certificats/ONU-Gerer-les-conflits.pdf" target="_blank" rel="noopener">voir ↗</a></small></li></ul>
+        </article>
+    </div>
+  </div>
+  <div>
+    <div class="pf-head reveal"><span class="pf-index">05</span><h2>Langues</h2></div>
+    <div class="langs">
+        <article class="lang reveal" style="--i: 0">
+          <h3>Français</h3>
+          <div class="lang-bar" role="img" aria-label="Niveau Excellent (langue de travail)"><i class="on" style="--k: 0"></i><i class="on" style="--k: 1"></i><i class="on" style="--k: 2"></i><i class="on" style="--k: 3"></i><i class="on" style="--k: 4"></i></div>
+          <p>Excellent (langue de travail)</p>
+        </article>
+        <article class="lang reveal" style="--i: 1">
+          <h3>Anglais</h3>
+          <div class="lang-bar" role="img" aria-label="Niveau Basique"><i class="on" style="--k: 0"></i><i class="on" style="--k: 1"></i><i class="" style="--k: 2"></i><i class="" style="--k: 3"></i><i class="" style="--k: 4"></i></div>
+          <p>Basique</p>
+        </article>
+    </div>
   </div>
 </section>
 
-<!-- ============ COMPÉTENCES ============ -->
-<section class="block" id="competences">
-  <div class="head"><span class="index">04</span><h2>Compétences</h2></div>
-  <div class="skills">
-    <div class="skill"><h3>Suivi-évaluation (MEAL)</h3><p>Cadres logiques, théorie du changement, plans de suivi, indicateurs SMART, gestion axée sur les résultats, redevabilité, capitalisation des apprentissages</p></div>
-    <div class="skill"><h3>Enquêtes &amp; échantillonnage</h3><p>Conception de questionnaires, plans d'échantillonnage, suivi de collecte, contrôle qualité des enquêteurs, redressement, valeurs manquantes</p></div>
-    <div class="skill"><h3>Traitement &amp; analyse</h3><p>Apurement et structuration de bases, tris à plat et croisements, méthodes statistiques et économétriques, modélisation prévisionnelle</p></div>
-    <div class="skill"><h3>Langages &amp; outils</h3><p class="tags"><span>R</span><span>Python</span><span>Stata</span><span>SPSS</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>Excel avancé</span></p></div>
-    <div class="skill"><h3>Collecte numérique</h3><p class="tags"><span>KoboToolbox</span><span>ODK</span><span>CSPro</span><span>Google Forms</span><span>QuestionPro</span></p></div>
-    <div class="skill"><h3>Restitution &amp; reporting</h3><p class="tags"><span>Power BI</span><span>Tableaux de bord</span><span>Rapports</span><span>Notes méthodologiques</span></p></div>
+<section class="pf-block" id="projets">
+  <div class="pf-head reveal"><span class="pf-index">06</span><h2>Projets</h2></div>
+  <p class="pf-intro reveal">Une sélection de travaux menés en poste et en mission. Les données des clients restent confidentielles : chaque projet présente la démarche, les outils et ce qui a été produit.</p>
+  <div class="projects">
+      <article class="bento-card project featured reveal" style="--i: 0">
+        <span class="bento-num">01</span>
+        <p class="project-tag">Consultant · Application web · octobre 2026</p>
+        <h3>Questionnaire d&#x27;évaluation des enseignements par les étudiants</h3>
+        <p class="project-desc">Une application web mobile, anonyme et reliée à Google Sheets, qui recueille l&#x27;avis des étudiants sur chaque cours d&#x27;une Licence et calcule automatiquement les indicateurs de suivi pour la direction des études.</p>
+        <ul><li>84 cours issus de 5 maquettes officielles, de la L1 à la L3 et options de L3</li><li>12 questions par cours, une seule obligatoire ; aucune donnée personnelle collectée</li><li>Réponses revérifiées côté serveur et verrou d&#x27;écriture pour les envois simultanés</li><li>Onglet Suivi en formules : moyennes par dimension, % de satisfaits, alerte automatique</li><li>Feuille de route en 7 étapes, du cadrage au rapport d&#x27;analyse</li></ul>
+        <div class="bento-chips"><span>Google Apps Script</span><span>Google Sheets</span><span>JavaScript</span><span>HTML / CSS</span><span>Conception de questionnaire</span></div>
+        <div class="project-links"><a class="link" href="https://script.google.com/macros/s/AKfycbx-VfDYaDUSFQ0SvkhAIj4BZkaOwPlf8o-cSiY4IwJY8Gh55oWtJXMInEyKxSNm-U2y/exec" target="_blank" rel="noopener">Tester l&#x27;application ↗</a><a class="link" href="projets/Fiche-projet-Questionnaire-evaluation-enseignements.pdf" target="_blank" rel="noopener">Fiche projet (PDF) ↗</a></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 1">
+        <span class="bento-num">02</span>
+        <p class="project-tag">DataTym · depuis août 2026</p>
+        <h3>Baromètres périodiques de suivi</h3>
+        <p class="project-desc">Conception et pilotage de baromètres dans divers domaines, du questionnaire au rapport de restitution.</p>
+        <ul><li>Questionnaires et système de gestion des baromètres sous QuestionPro</li><li>Formation des agents collecteurs aux outils et aux procédures</li><li>Traitement et analyse des données pour le suivi des indicateurs</li><li>Automatisation des tâches de traitement et de production</li><li>Rapports à chaque étape, de la conception à la restitution</li></ul>
+        <div class="bento-chips"><span>QuestionPro</span><span>Excel avancé</span><span>Automatisation</span><span>Rapports</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 0">
+        <span class="bento-num">03</span>
+        <p class="project-tag">DataTym · 2026</p>
+        <h3>Plateforme de contrôle qualité de la collecte</h3>
+        <p class="project-desc">Un outil pour suivre la collecte et fiabiliser les données remontées du terrain.</p>
+        <ul><li>Suivi-évaluation de l&#x27;avancement de la collecte</li><li>Contrôle qualité des enquêteurs</li></ul>
+        <div class="bento-chips"><span>QuestionPro</span><span>Contrôle qualité</span><span>Suivi-évaluation</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 1">
+        <span class="bento-num">04</span>
+        <p class="project-tag">Laboratoire BIO24 · DOLPH-STATS Consulting</p>
+        <h3>Tableaux de bord de suivi des indicateurs</h3>
+        <p class="project-desc">Des tableaux de bord pour suivre la performance et appuyer la décision, dans une logique de gestion axée sur les résultats.</p>
+        <ul><li>Mise en place et suivi d&#x27;indicateurs de performance</li><li>Tableaux de bord décisionnels et baromètres sous Power BI et Excel avancé</li><li>Identification des écarts</li></ul>
+        <div class="bento-chips"><span>Power BI</span><span>Excel avancé</span><span>Indicateurs</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 0">
+        <span class="bento-num">05</span>
+        <p class="project-tag">Laboratoire BIO24 · 2025</p>
+        <h3>Gestion et analyse des données sanitaires</h3>
+        <p class="project-desc">Des données sanitaires, financières et opérationnelles fiabilisées et analysées, dans le respect de la confidentialité.</p>
+        <ul><li>Outils de collecte (questionnaires, formulaires digitaux) pour des enquêtes internes et externes</li><li>Supervision de la collecte avec les équipes terrain</li><li>Contrôles internes de cohérence des bases de données</li><li>Contrôle de gestion : suivi financier et logistique</li><li>Rapports d&#x27;activités périodiques et notes de synthèse</li></ul>
+        <div class="bento-chips"><span>Formulaires digitaux</span><span>Contrôle qualité</span><span>Éthique des données</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 1">
+        <span class="bento-num">06</span>
+        <p class="project-tag">DOLPH-STATS Consulting · 2024–2025</p>
+        <h3>Études de marché et analyses</h3>
+        <p class="project-desc">Des études pour éclairer les choix stratégiques : tendances, risques et recommandations.</p>
+        <ul><li>Outils de collecte et coordination des activités de collecte</li><li>Analyses descriptives, multidimensionnelles et inférentielles</li><li>Consolidation de données financières et opérationnelles, repérage des risques</li><li>Rapports d&#x27;études et présentation des résultats aux parties prenantes</li></ul>
+        <div class="bento-chips"><span>SPSS</span><span>Stata</span><span>Excel avancé</span><span>Rapports</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 0">
+        <span class="bento-num">07</span>
+        <p class="project-tag">DOLPH-STATS Consulting · 2024–2025</p>
+        <h3>Centralisation et modélisation de bases de données</h3>
+        <p class="project-desc">Des données rassemblées dans des bases structurées, prêtes pour l&#x27;analyse et les tableaux de bord.</p>
+        <ul><li>Structuration et centralisation de bases sous PostgreSQL et MySQL</li><li>Web scraping</li><li>Modélisation des données</li></ul>
+        <div class="bento-chips"><span>PostgreSQL</span><span>MySQL</span><span>SQL</span><span>Web scraping</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 1">
+        <span class="bento-num">08</span>
+        <p class="project-tag">CREA, UCAD · depuis 2024</p>
+        <h3>Recherche appliquée et évaluation de projets à impact social</h3>
+        <p class="project-desc">Des analyses quantitatives au service de l&#x27;évaluation de projets et des politiques publiques.</p>
+        <ul><li>Collecte, traitement et analyse de données socio-économiques</li><li>Évaluation de projets à impact social et analyse de politiques publiques</li><li>Traitement de données environnementales et sociales (ESG)</li><li>Appui à la modélisation économétrique</li><li>Rapports, notes de synthèse et articles scientifiques</li></ul>
+        <div class="bento-chips"><span>Stata</span><span>R</span><span>Économétrie</span><span>ESG</span></div>
+      </article>
+      <article class="bento-card project reveal" style="--i: 0">
+        <span class="bento-num">09</span>
+        <p class="project-tag">ALX Africa · 2026</p>
+        <h3>Programme Data Science</h3>
+        <p class="project-desc">Programme complet de science des données, validé par l&#x27;ensemble des projets et évaluations du cursus, après le programme Data Analytics (6 mois).</p>
+        <ul><li>Préparation, analyse et visualisation de données avec Python</li><li>Méthodes d&#x27;apprentissage automatique appliquées</li></ul>
+        <div class="bento-chips"><span>Python</span><span>Data Science</span><span>Visualisation</span></div>
+        <div class="project-links"><a class="link" href="https://ehub.alxafrica.com/ob3/verify-certificate/a1025298-87ca-4390-833e-f0984b728046" target="_blank" rel="noopener">Vérifier le certificat ↗</a></div>
+      </article>
   </div>
-  <p class="langs"><b>Langues :</b> Français (langue de travail) · Anglais (niveau basique, en progression)</p>
 </section>
 
-<!-- ============ CERTIFICATIONS ============ -->
-<section class="block" id="certifications">
-  <div class="head"><span class="index">05</span><h2>Certifications</h2></div>
-  <div class="certs">
-    <div class="cert-group">
-      <h3>Suivi-évaluation &amp; humanitaire</h3>
-      <ul>
-        <li><b>Suivi &amp; Évaluation de projet</b><span>AFD · 2024</span></li>
-        <li><b>MEAL Essentials</b><span>DisasterReady · 2024</span></li>
-        <li><b>MEAL en situations d'urgence</b><span>Save the Children · 2024</span></li>
-        <li><b>Child Protection, gestion axée sur les résultats</b><span>UNICEF · 2024</span></li>
-        <li><b>Gestion responsable des données en situations d'urgence</b><span>Save the Children · 2024</span></li>
-      </ul>
+<section class="pf-block" id="contact">
+  <div class="pf-head reveal"><span class="pf-index">07</span><h2>Contact</h2></div>
+  <div class="contact reveal">
+    <canvas class="silk" aria-hidden="true"></canvas>
+    <p class="eyebrow light">Disponible</p>
+    <h2>Travaillons <em>ensemble</em>.</h2>
+    <p class="contact-text">Poste en suivi-évaluation, en statistique ou en analyse de données, mission de consultance : écrivez-moi.</p>
+    <div class="pf-contacts">
+      <a href="mailto:sounkalotraore.ing@gmail.com">✉ sounkalotraore.ing@gmail.com</a>
+      <a href="tel:+221785888646">☏ +221 78 588 86 46</a>
+      <a href="https://www.linkedin.com/in/ing-sounkalo-traore" target="_blank" rel="noopener">in · LinkedIn</a>
     </div>
-    <div class="cert-group">
-      <h3>Données</h3>
-      <ul>
-        <li><b>Data Science</b><span>ALX · 2026 · <a href="https://ehub.alxafrica.com/ob3/verify-certificate/a1025298-87ca-4390-833e-f0984b728046" target="_blank" rel="noopener">vérifier ↗</a></span></li>
-        <li><b>Data Analytics (6 mois)</b><span>ALX · 2026</span></li>
-        <li><b>Professional Development Skills for the Digital Age</b><span>ALX · 2025</span></li>
-        <li><b>Analyse de données qualitatives</b><span>Cornerstone · 2024</span></li>
-        <li><b>Traitement des données N2</b><span>FORCE-N · 2024</span></li>
-      </ul>
-    </div>
-    <div class="cert-group">
-      <h3>Numérique &amp; autres</h3>
-      <ul>
-        <li><b>Marketing numérique</b><span>Francophonie · 2025</span></li>
-        <li><b>Commerce digital</b><span>FORCE-N · 2025</span></li>
-        <li><b>IA pour tous</b><span>FORCE-N · 2025</span></li>
-        <li><b>Informatique et Internet</b><span>FORCE-N · 2024</span></li>
-        <li><b>Finances et budgets en situations d'urgence</b><span>Save the Children · 2024</span></li>
-        <li><b>Gérer les conflits sur le lieu de travail</b><span>Nations Unies · 2024</span></li>
-      </ul>
+    <p class="cv-label">Télécharger mon CV</p>
+    <div class="cv-choice">
+      <a class="btn light" href="cv/CV-Sounkalo-TRAORE.pdf" target="_blank" rel="noopener">CV général</a>
+      <a class="btn glass" href="cv/CV-Sounkalo-TRAORE-Suivi-evaluation-MEAL.pdf" target="_blank" rel="noopener">Suivi-évaluation / MEAL</a>
+      <a class="btn glass" href="cv/CV-Sounkalo-TRAORE-Statisticien.pdf" target="_blank" rel="noopener">Statisticien</a>
+      <a class="btn glass" href="cv/CV-Sounkalo-TRAORE-Data-Analyst.pdf" target="_blank" rel="noopener">Data Analyst</a>
     </div>
   </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <p class="eyebrow light">Contact</p>
-  <h2>Travaillons <em>ensemble</em>.</h2>
-  <p>Poste en suivi-évaluation, en statistique ou en analyse de données, mission de consultance : écrivez-moi.</p>
-  <div class="contact-links">
-    <a class="btn" href="mailto:sounkalotraore.ing@gmail.com">sounkalotraore.ing@gmail.com</a>
-    <a class="btn ghost" href="tel:+221785888646">+221 78 588 86 46</a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/ing-sounkalo-traore" target="_blank" rel="noopener">LinkedIn ↗</a>
-    <a class="btn ghost" href="cv/CV-Sounkalo-TRAORE.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-  </div>
-  <p class="where">Basé à Dakar, Sénégal · disponible pour des missions en Afrique de l'Ouest</p>
 </section>
 
 </main>
 
-<footer class="foot">© <span data-year>2026</span> Sounkalo TRAORÉ · Ingénieur Statisticien-Économiste</footer>
+<footer class="foot">© <span data-year>2026</span> Sounkalo TRAORÉ</footer>
 
 <script src="assets/site.js"></script>
 </body>

@@ -4,3 +4,14 @@ HISTORIQUE-portfolio.md
 
 # Réglages de l’éditeur
 .vscode/
+
+# Cahier des charges de la refonte (document de travail)
+Refonte_portfolio_page_profil.pdf
+
+# Script qui régénère index.html depuis profile.json de Bara (outil local)
+generer_portfolio.py
+generer_cv.py
+
+# Documents de travail posés à la racine (CV par offre avec références, maquettes...) : jamais publiés
+/*.pdf
+/*.docx
