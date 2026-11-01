@@ -197,9 +197,12 @@ main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; }
 .project-links { display: flex; gap: 8px 18px; flex-wrap: wrap; margin-top: 14px; }
 .project .link { font-weight: 600; text-decoration: none; }
 .project .link:hover { text-decoration: underline; }
-.project.featured { grid-column: 1 / -1; }
-.project.featured ul { columns: 2; column-gap: 32px; }
-.project.featured li { break-inside: avoid; }
+.project-body { display: flex; flex-direction: column; flex: 1; }
+.project.featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+.project.featured:nth-child(2) .project-shot { order: 2; }
+.project-shot { display: block; border-radius: 16px; overflow: hidden; border: 1px solid var(--tint-line); box-shadow: var(--shadow); transition: transform .35s; }
+.project-shot:hover { transform: scale(1.015); }
+.project-shot img { display: block; width: 100%; height: auto; }
 
 /* 07 Contact : bloc noir arrondi, comme le bandeau */
 .contact {
@@ -235,7 +238,8 @@ main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; }
 }
 @media (max-width: 600px) {
   .bento, .projects { grid-template-columns: 1fr; }
-  .project.featured ul { columns: 1; }
+  .project.featured { grid-template-columns: 1fr; gap: 18px; }
+  .project.featured:nth-child(2) .project-shot { order: 0; }
   .bento-card.wide, .bento-card.tools, .bento-card:last-child { grid-column: auto; }
   .xp-item { grid-template-columns: 1fr; gap: 10px; }
   .xp-years { flex-direction: row; gap: 10px; align-items: baseline; }
