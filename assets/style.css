@@ -202,7 +202,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 40px; }
 .project.featured:nth-child(2) .project-shot { order: 2; }
 .project-shot { display: block; border-radius: 16px; overflow: hidden; border: 1px solid var(--tint-line); box-shadow: var(--shadow); transition: transform .35s; }
 .project-shot:hover { transform: scale(1.015); }
-.project-shot img { display: block; width: 100%; height: auto; }
+.project-shot picture, .project-shot img { display: block; width: 100%; height: auto; }
 
 /* 07 Contact : bloc noir arrondi, comme le bandeau */
 .contact {
